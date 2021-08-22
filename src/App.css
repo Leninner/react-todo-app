@@ -8,6 +8,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  /* Prefers-reduced-motion se utiliza para detectar si el usuario ha solicitado que el sistema minimice la cantidad de movimiento no esencial que utiliza.*/
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
