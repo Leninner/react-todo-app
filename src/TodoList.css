@@ -1,7 +1,8 @@
+ul {
+  margin: 0;
+  padding: 0 0 56px 0;
+  list-style: none;
+}
+
 @media only screen and (max-width: 800px) {
-  ul {
-    margin: 0;
-    padding: 0 0 56px 0;
-    list-style: none;
-  }
 }

@@ -5,6 +5,7 @@ import { TodoSearch } from './TodoSearch';
 import { CreateTodoButton } from './CreateTodoButton';
 import { TodoItem } from './TodoItem';
 import { TodoList } from './TodoList';
+import { TodoBrand } from './TodoBrand';
 
 const todos = [
   { text: 'Cortar Cebolla', completed: true },
@@ -15,6 +16,7 @@ const todos = [
 function App() {
   return (
     <React.Fragment>
+      <TodoBrand />
       <TodoCounter />
       <TodoSearch />
       <TodoList>

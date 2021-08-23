@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+}
+
+h1 {
+  font-size: 60px;
+  color: #e44232;
+}
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+}

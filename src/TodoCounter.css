@@ -1,8 +1,13 @@
+.TodoCounter {
+  font-size: 36px;
+  text-align: center;
+  margin: 0;
+  padding: 0 0 48px 0;
+  color: #1f1f1f;
+}
+
 @media only screen and (max-width: 800px) {
   .TodoCounter {
-    font-size: 36px;
-    text-align: center;
-    margin: 0;
-    padding: 48px;
+    font-size: 30px;
   }
 }
