@@ -7,7 +7,7 @@ import { TodoItem } from './TodoItem';
 import { TodoList } from './TodoList';
 
 const todos = [
-  { text: 'Cortar Cebolla', completed: false },
+  { text: 'Cortar Cebolla', completed: true },
   { text: 'Intro a React', completed: false },
   { text: 'Llorar con la llorona', completed: false },
 ];
@@ -19,7 +19,7 @@ function App() {
       <TodoSearch />
       <TodoList>
         {todos.map((todo) => (
-          <TodoItem key={todo.text} text={todo.text} />
+          <TodoItem key={todo.text} text={todo.text} completed={todo.completed} />
         ))}
       </TodoList>
       <CreateTodoButton />

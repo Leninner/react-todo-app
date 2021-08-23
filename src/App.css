@@ -1,19 +1,19 @@
-.App {
+/* .App {
   text-align: center;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  /* Prefers-reduced-motion se utiliza para detectar si el usuario ha solicitado que el sistema minimice la cantidad de movimiento no esencial que utiliza.*/
+/* @media (prefers-reduced-motion: no-preference) {
+   Prefers-reduced-motion se utiliza para detectar si el usuario ha solicitado que el sistema minimice la cantidad de movimiento no esencial que utiliza.
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
+} */
+/*
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -36,4 +36,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
