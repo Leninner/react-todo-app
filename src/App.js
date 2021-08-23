@@ -24,7 +24,7 @@ function App() {
           <TodoItem key={todo.text} text={todo.text} completed={todo.completed} />
         ))}
       </TodoList>
-      <CreateTodoButton />
+      <CreateTodoButton msg='Leninner' />
     </React.Fragment>
   );
 }
