@@ -12,6 +12,7 @@ function App() {
   const localStorageTodos = localStorage.getItem('TODOS_V1');
   let parsedTodos;
 
+  //Lógica para comprobar si ya han usado la aplicación o no.
   if (!localStorageTodos) {
     localStorage.setItem('TODOS_V1', JSON.stringify([]));
     parsedTodos = [];
@@ -37,6 +38,7 @@ function App() {
     });
   }
 
+  //Función para controlar el flujo de la app
   const saveTodos = (newTodos) => {
     const stringifiedTodos = JSON.stringify(newTodos);
     localStorage.setItem('TODOS_V1', stringifiedTodos);
