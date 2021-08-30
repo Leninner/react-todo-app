@@ -5,23 +5,18 @@ import { CreateTodoButton } from '../CreateTodoButton';
 import { TodoItem } from '../TodoItem';
 import { TodoList } from '../TodoList';
 import { TodoBrand } from '../TodoBrand';
+import { TodoContext } from '../TodoContext';
 
-function AppUI({
-  loading,
-  error,
-  totalTodos,
-  completedTodos,
-  searchValue,
-  setSearchValue,
-  searchedTodos,
-  completeTodos,
-  deleteTodos,
-}) {
+function AppUI() {
+  const { error, loading, searchedTodos, completeTodos, deleteTodos } = React.useContext(TodoContext);
+
   return (
     <React.Fragment>
       <TodoBrand />
-      <TodoCounter total={totalTodos} completed={completedTodos} />
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+      <TodoCounter />
+      <TodoSearch />
+
+      {/* Aquí llamamos los métodos de value que queremos usar */}
       <TodoList>
         {error && <p>Desespérate, hubo un error</p>}
         {loading && <p>Estamos cargando, no desesperes</p>}
@@ -41,7 +36,8 @@ function AppUI({
           />
         ))}
       </TodoList>
-      <CreateTodoButton msg='Cristiano Ronaldo' />
+
+      <CreateTodoButton msg='Pepeeee' />
     </React.Fragment>
   );
 }
