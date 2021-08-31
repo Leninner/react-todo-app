@@ -8,10 +8,12 @@ import { TodoBrand } from '../TodoBrand';
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../Modal';
 import { TodoForm } from '../TodoForm';
+import { TodoError } from '../TodoError';
+import { TodoLoading } from '../TodoLoading';
+import { TodoEmpty } from '../TodoEmpty';
 
 function AppUI() {
-  const { error, loading, searchedTodos, completeTodos, deleteTodos, openModal, setOpenModal } =
-    React.useContext(TodoContext);
+  const { error, loading, searchedTodos, completeTodos, deleteTodos, openModal } = React.useContext(TodoContext);
 
   return (
     <React.Fragment>
@@ -21,9 +23,9 @@ function AppUI() {
 
       {/* Aquí llamamos los métodos de value que queremos usar */}
       <TodoList>
-        {error && <p>Desespérate, hubo un error</p>}
-        {loading && <p>Estamos cargando, no desesperes</p>}
-        {!loading && !searchedTodos.length && <p>Crea tu primer TODO...</p>}
+        {error && <TodoError error={error} />}
+        {loading && <TodoLoading />}
+        {!loading && !searchedTodos.length && <TodoEmpty />}
 
         {searchedTodos.map((todo) => (
           <TodoItem

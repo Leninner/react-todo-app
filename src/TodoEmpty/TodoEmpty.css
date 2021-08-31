@@ -1,0 +1,15 @@
+.emptyTodo {
+  width: 100%;
+  height: 250px;
+  background-color: #e44232;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+p {
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+}
