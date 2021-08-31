@@ -7,6 +7,7 @@ const TodoProvider = (props) => {
   const { item: todos, saveItem: saveTodos, loading, error } = useLocalStorage('TODOS_V1', []);
 
   const [searchValue, setSearchValue] = React.useState(''); // Forma de trabajar los estados.
+  const [openModal, setOpenModal] = React.useState(false);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -22,6 +23,13 @@ const TodoProvider = (props) => {
       return todoText.includes(searchText);
     });
   }
+
+  const addTodos = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({ completed: false, text: text });
+
+    saveTodos(newTodos);
+  };
 
   const completeTodos = (text) => {
     const todoIndex = todos.findIndex((todo) => todo.text === text);
@@ -60,7 +68,10 @@ const TodoProvider = (props) => {
         setSearchValue,
         searchedTodos,
         completeTodos,
+        addTodos,
         deleteTodos,
+        openModal,
+        setOpenModal,
       }}
     >
       {props.children}
