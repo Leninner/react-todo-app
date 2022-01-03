@@ -1,7 +1,8 @@
 import React from 'react';
+import { CreateTodoButton } from '../CreateTodoButton';
 import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
-import { CreateTodoButton } from '../CreateTodoButton';
+import { TodoHeader } from '../TodoHeader';
 import { TodoItem } from '../TodoItem';
 import { TodoList } from '../TodoList';
 import { TodoBrand } from '../TodoBrand';
@@ -12,16 +13,28 @@ import { TodoError } from '../TodoError';
 import { TodoLoading } from '../TodoLoading';
 import { TodoEmpty } from '../TodoEmpty';
 
-function AppUI() {
-  const { error, loading, searchedTodos, completeTodos, deleteTodos, openModal } = React.useContext(TodoContext);
+export const AppUI = () => {
+  const {
+    error,
+    loading,
+    searchedTodos,
+    completeTodos,
+    deleteTodos,
+    openModal,
+    totalTodos,
+    completedTodos,
+    searchValue,
+    setSearchValue,
+  } = React.useContext(TodoContext);
 
   return (
     <React.Fragment>
-      <TodoBrand />
-      <TodoCounter />
-      <TodoSearch />
+      <TodoHeader>
+        <TodoBrand />
+        <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
+        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+      </TodoHeader>
 
-      {/* Aquí llamamos los métodos de value que queremos usar */}
       <TodoList>
         {error && <TodoError error={error} />}
         {loading && <TodoLoading />}
@@ -51,6 +64,4 @@ function AppUI() {
       <CreateTodoButton />
     </React.Fragment>
   );
-}
-
-export { AppUI };
+};
