@@ -1,17 +1,17 @@
 import React from 'react';
 import './TodoList.css';
 
-function TodoList(props) {
-  const { error, loading, searchedTodos, onError, onLoading, onEmptyTodos, render } = props;
+export const TodoList = (props) => {
+  const { error, loading, searchedTodos, onError, onLoading, onEmptyTodos, children, render } = props;
+
+  const renderFunction = children || render;
 
   return (
     <section>
       {error && onError()}
       {loading && onLoading()}
       {!loading && !searchedTodos.length && onEmptyTodos()}
-      {searchedTodos.map(render)}
+      {searchedTodos.map(renderFunction)}
     </section>
   );
-}
-
-export { TodoList };
+};
