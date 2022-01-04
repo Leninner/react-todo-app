@@ -27,6 +27,7 @@ textarea {
   padding: 12px;
   height: 96px;
   width: calc(100%-25px);
+  resize: vertical;
 }
 
 textarea::placeholder {
