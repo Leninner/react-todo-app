@@ -11,7 +11,7 @@ export const TodoList = (props) => {
       {error && onError()}
       {loading && onLoading()}
       {!loading && !searchedTodos.length && onEmptyTodos()}
-      {searchedTodos.map(renderFunction)}
+      {!loading && searchedTodos.map(renderFunction)}
     </section>
   );
 };

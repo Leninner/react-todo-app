@@ -13,6 +13,7 @@ import { TodoError } from '../TodoError';
 import { TodoLoading } from '../TodoLoading';
 import { TodoEmpty } from '../TodoEmpty';
 import { useTodos } from './useTodos';
+import { ChangeAlertWithStorage } from '../ChangeAlert';
 
 function App() {
   const {
@@ -28,6 +29,7 @@ function App() {
     setSearchValue,
     addTodos,
     setOpenModal,
+    sincronizeTodos,
   } = useTodos();
 
   return (
@@ -67,6 +69,7 @@ function App() {
       )}
 
       <CreateTodoButton openModal={openModal} setOpenModal={setOpenModal} />
+      <ChangeAlertWithStorage sincronizeTodos={sincronizeTodos} />
     </>
   );
 }

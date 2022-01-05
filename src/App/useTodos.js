@@ -2,7 +2,13 @@ import { useState } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 
 export const useTodos = () => {
-  const { item: todos, saveItem: saveTodos, loading, error } = useLocalStorage('TODOS_V1', []);
+  const {
+    item: todos,
+    saveItem: saveTodos,
+    loading,
+    error,
+    sincronizeItem: sincronizeTodos,
+  } = useLocalStorage('TODOS_V1', []);
 
   const [searchValue, setSearchValue] = useState(''); // Forma de trabajar los estados.
   const [openModal, setOpenModal] = useState(false);
@@ -58,5 +64,6 @@ export const useTodos = () => {
     deleteTodos,
     openModal,
     setOpenModal,
+    sincronizeTodos,
   };
 };
