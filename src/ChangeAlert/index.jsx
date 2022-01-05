@@ -1,10 +1,11 @@
 import { withChangeStorage } from './withChangeStorage';
+import './changeAlert.css';
 
 function ChangeAlert({ hasChanges, setHasChanges, sincronizeTodos }) {
   return (
     <>
       {hasChanges && (
-        <div>
+        <div className='alerta'>
           <h3>You have unsaved changes.</h3>
           <button
             onClick={() => {

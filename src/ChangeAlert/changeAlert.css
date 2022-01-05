@@ -1,0 +1,33 @@
+.alerta {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
+  border: 1px solid rgb(173, 171, 171);
+}
+
+.alerta h3 {
+  margin-bottom: 10px;
+}
+
+.alerta button {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgb(14, 113, 194);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.alerta button:hover {
+  background: rgb(11, 99, 172);
+  color: white;
+}
